@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", 
+    @user = User.new(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
   end
 
@@ -49,7 +49,7 @@ describe User do
       addresses.each do |valid_address|
         @user.email = valid_address
         expect(@user).to be_valid
-      end      
+      end
     end
   end
 
