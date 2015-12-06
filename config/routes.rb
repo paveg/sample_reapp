@@ -1,5 +1,7 @@
 SampleReapp::Application.routes.draw do
-  resource :users
+  get 'users/new'
+
+  resources :users
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
