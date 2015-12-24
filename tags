@@ -25,23 +25,33 @@ change	db/migrate/20151128151243_add_index_to_users_email.rb	/^  def change$/;"	
 change	db/migrate/20151128153457_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
 change	db/migrate/20151206131722_add_remember_token_to_users.rb	/^  def change$/;"	f	class:AddRememberTokenToUsers
 contact	app/controllers/static_pages_controller.rb	/^  def contact$/;"	f	class:StaticPagesController
+correct_user	app/controllers/users_controller.rb	/^  def correct_user$/;"	f	class:UsersController
 create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
 create	app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
-create_remember_token	app/models/user.rb	/^  def create_remember_token$/;"	f	class:User
+create_remember_token	app/models/user.rb	/^    def create_remember_token$/;"	f	class:User
 current_user	app/helpers/sessions_helper.rb	/^  def current_user$/;"	f	class:SessionsHelper
 current_user=	app/helpers/sessions_helper.rb	/^  def current_user=(user)$/;"	f	class:SessionsHelper
+current_user?	app/helpers/sessions_helper.rb	/^  def current_user?(user)$/;"	f	class:SessionsHelper
 destroy	app/controllers/sessions_controller.rb	/^  def destroy$/;"	f	class:SessionsController
+edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
 encrypt	app/models/user.rb	/^  def User.encrypt(token)$/;"	F	class:User
 full_title	app/helpers/application_helper.rb	/^  def full_title(page_title)$/;"	f	class:ApplicationHelper
 gravatar_for	app/helpers/users_helper.rb	/^  def gravatar_for(user, options = {size: 50})$/;"	f	class:UsersHelper
 help	app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
 home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+index	app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
 new_remember_token	app/models/user.rb	/^  def User.new_remember_token$/;"	F	class:User
+redirect_back_or	app/helpers/sessions_helper.rb	/^  def redirect_back_or(default)$/;"	f	class:SessionsHelper
 secure_token	config/initializers/secret_token.rb	/^def secure_token$/;"	f
 show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
 sign_in	app/helpers/sessions_helper.rb	/^  def sign_in(user)$/;"	f	class:SessionsHelper
+sign_in	spec/support/utilities.rb	/^def sign_in(user, options={})$/;"	f
 sign_out	app/helpers/sessions_helper.rb	/^  def sign_out$/;"	f	class:SessionsHelper
 signed_in?	app/helpers/sessions_helper.rb	/^  def signed_in?$/;"	f	class:SessionsHelper
+signed_in_user	app/controllers/users_controller.rb	/^  def signed_in_user$/;"	f	class:UsersController
+store_location	app/helpers/sessions_helper.rb	/^  def store_location$/;"	f	class:SessionsHelper
+update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
 user_params	app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController
+valid_signin	spec/support/utilities.rb	/^def valid_signin(user)$/;"	f
