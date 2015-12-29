@@ -14,8 +14,8 @@ describe "Static pages" do
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        FactoryGirl.create(:micropost, user: user, content: "Lorem")
-        FactoryGirl.create(:micropost, user: user, content: "Ipsum")
+        FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
+        FactoryGirl.create(:micropost, user: user, content: "Dolor sit amet")
         sign_in user
         visit root_path
       end
@@ -56,9 +56,7 @@ describe "Static pages" do
   describe "Contact page" do
     before { visit contact_path }
 
-    it { should have_selector('h1', text: 'Contact') }
+    it { should have_content('Contact') }
     it { should have_title(full_title('Contact')) }
   end
-
-
 end
