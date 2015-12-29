@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 describe RelationshipsController do
-
-  let(:user) { FactoryGirl.create(:user) }
-  let(:ohter_user) { FactoryGirl.create(:user) }
+  let(:user)       { FactoryGirl.create(:user) }
+  let(:other_user) { FactoryGirl.create(:user) }
 
   before { sign_in user, no_capybara: true }
 
@@ -22,7 +21,6 @@ describe RelationshipsController do
   end
 
   describe "destroying a relationship with Ajax" do
-
     before { user.follow!(other_user) }
     let(:relationship) do
       user.relationships.find_by(followed_id: other_user.id)
@@ -31,7 +29,7 @@ describe RelationshipsController do
     it "should decrement the Relationship count" do
       expect do
         xhr :delete, :destroy, id: relationship.id
-      end.to change(Relationship, count).by(-1)
+      end.to change(Relationship, :count).by(-1)
     end
 
     it "should respond with success" do

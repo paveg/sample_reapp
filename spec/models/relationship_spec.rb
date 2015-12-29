@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-describe Relationships do
-
+describe Relationship do
   let(:follower) { FactoryGirl.create(:user) }
   let(:followed) { FactoryGirl.create(:user) }
-  let(:relationship) { follower.relationship.build(followed_id: followed_id) }
+  let(:relationship) { follower.relationships.build(followed_id: followed.id) }
 
   subject { relationship }
 
@@ -23,7 +22,7 @@ describe Relationships do
   end
 
   describe "when follower id is not present" do
-    before { relationship.followed_id = nil }
+    before { relationship.follower_id = nil }
     it { should_not be_valid }
   end
 end
