@@ -42,4 +42,4 @@ describe "Micropost pages" do
       end
     end
   end
-end)
+end

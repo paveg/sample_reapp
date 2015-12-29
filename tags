@@ -11,7 +11,13 @@ AddRememberTokenToUsers	db/migrate/20151206131722_add_remember_token_to_users.rb
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:SampleReapp
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateMicroposts	db/migrate/20151227071746_create_microposts.rb	/^class CreateMicroposts < ActiveRecord::Migration$/;"	c
+CreateRelationships	db/migrate/20151229100540_create_relationships.rb	/^class CreateRelationships < ActiveRecord::Migration$/;"	c
 CreateUsers	db/migrate/20151128085604_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+Micropost	app/models/micropost.rb	/^class Micropost < ActiveRecord::Base$/;"	c
+MicropostsController	app/controllers/microposts_controller.rb	/^class MicropostsController < ApplicationController$/;"	c
+MicropostsHelper	app/helpers/microposts_helper.rb	/^module MicropostsHelper$/;"	m
+Relationships	app/models/relationships.rb	/^class Relationships < ActiveRecord::Base$/;"	c
 SampleReapp	config/application.rb	/^module SampleReapp$/;"	m
 SessionsController	app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
 SessionsHelper	app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
@@ -27,23 +33,34 @@ change	db/migrate/20151128151243_add_index_to_users_email.rb	/^  def change$/;"	
 change	db/migrate/20151128153457_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
 change	db/migrate/20151206131722_add_remember_token_to_users.rb	/^  def change$/;"	f	class:AddRememberTokenToUsers
 change	db/migrate/20151220165757_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+change	db/migrate/20151227071746_create_microposts.rb	/^  def change$/;"	f	class:CreateMicroposts
+change	db/migrate/20151229100540_create_relationships.rb	/^  def change$/;"	f	class:CreateRelationships
 contact	app/controllers/static_pages_controller.rb	/^  def contact$/;"	f	class:StaticPagesController
+correct_user	app/controllers/microposts_controller.rb	/^    def correct_user$/;"	f	class:MicropostsController
 correct_user	app/controllers/users_controller.rb	/^  def correct_user$/;"	f	class:UsersController
+create	app/controllers/microposts_controller.rb	/^  def create$/;"	f	class:MicropostsController
 create	app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
 create	app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
 create_remember_token	app/models/user.rb	/^    def create_remember_token$/;"	f	class:User
 current_user	app/helpers/sessions_helper.rb	/^  def current_user$/;"	f	class:SessionsHelper
 current_user=	app/helpers/sessions_helper.rb	/^  def current_user=(user)$/;"	f	class:SessionsHelper
 current_user?	app/helpers/sessions_helper.rb	/^  def current_user?(user)$/;"	f	class:SessionsHelper
+destroy	app/controllers/microposts_controller.rb	/^  def destroy$/;"	f	class:MicropostsController
 destroy	app/controllers/sessions_controller.rb	/^  def destroy$/;"	f	class:SessionsController
 destroy	app/controllers/users_controller.rb	/^  def destroy$/;"	f	class:UsersController
 edit	app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
 encrypt	app/models/user.rb	/^  def User.encrypt(token)$/;"	F	class:User
+feed	app/models/user.rb	/^  def feed$/;"	f	class:User
+follow!	app/models/user.rb	/^  def follow!(other_user)$/;"	f	class:User
+followers	app/controllers/users_controller.rb	/^  def followers$/;"	f	class:UsersController
+following	app/controllers/users_controller.rb	/^  def following$/;"	f	class:UsersController
+following?	app/models/user.rb	/^  def following?(other_user)$/;"	f	class:User
 full_title	app/helpers/application_helper.rb	/^  def full_title(page_title)$/;"	f	class:ApplicationHelper
 gravatar_for	app/helpers/users_helper.rb	/^  def gravatar_for(user, options = {size: 50})$/;"	f	class:UsersHelper
 help	app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
 home	app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
 index	app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
+micropost_params	app/controllers/microposts_controller.rb	/^    def micropost_params$/;"	f	class:MicropostsController
 new	app/controllers/sessions_controller.rb	/^  def new$/;"	f	class:SessionsController
 new	app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
 new_remember_token	app/models/user.rb	/^  def User.new_remember_token$/;"	F	class:User
@@ -55,7 +72,11 @@ sign_in	spec/support/utilities.rb	/^def sign_in(user, options={})$/;"	f
 sign_out	app/helpers/sessions_helper.rb	/^  def sign_out$/;"	f	class:SessionsHelper
 signed_in?	app/helpers/sessions_helper.rb	/^  def signed_in?$/;"	f	class:SessionsHelper
 signed_in_user	app/controllers/users_controller.rb	/^  def signed_in_user$/;"	f	class:UsersController
+signed_in_user	app/helpers/sessions_helper.rb	/^  def signed_in_user$/;"	f	class:SessionsHelper
 store_location	app/helpers/sessions_helper.rb	/^  def store_location$/;"	f	class:SessionsHelper
+unfollow!	app/models/user.rb	/^  def unfollow!(other_user)$/;"	f	class:User
 update	app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
 user_params	app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController
 valid_signin	spec/support/utilities.rb	/^def valid_signin(user)$/;"	f
+wrap	app/helpers/microposts_helper.rb	/^  def wrap(content)$/;"	f	class:MicropostsHelper
+wrap_long_string	app/helpers/microposts_helper.rb	/^    def wrap_long_string(text, max_width = 30)$/;"	f	class:MicropostsHelper
