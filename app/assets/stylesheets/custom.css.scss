@@ -10,6 +10,7 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+
 /* universal */
 
 html {
@@ -34,6 +35,7 @@ textarea {
     margin-bottom: 10px;
   }
 }
+
 
 /* typography */
 
@@ -81,6 +83,7 @@ p {
   }
 }
 
+
 /* footer */
 
 footer {
@@ -107,36 +110,17 @@ footer {
   }
 }
 
+
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  @include box_sizing;
+}
+
+
 /* sidebar */
-
-.stats {
-  overflow: auto;
-  a {
-   float: left;
-   pading: 0 10px;
-   border-left: 1px solid $grayLighter;
-   color: gray;
-   &:first-child {
-    padding-left: 0;
-    border: 0;
-   }
-   &:hover {
-    text-decoration: none;
-    color: $blue;
-   }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-}
 
 aside {
   section {
@@ -155,7 +139,7 @@ aside {
       font-size: 1.4em;
       text-align: left;
       letter-spacing: -1px;
-      margin-bottom: 3px;
+      margin-botom: 3px;
       margin-top: 0px;
     }
   }
@@ -166,36 +150,39 @@ aside {
   margin-right: 10px;
 }
 
-/* microposts */
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
 
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
   }
 }
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
+
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, textarea, select .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   padding: 10px;
@@ -220,15 +207,6 @@ input {
   @extend .error;
 }
 
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width:  100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
 
 /* users index */
 
@@ -242,5 +220,34 @@ input {
     &:last-child {
       border-bottom: 1px solid $grayLighter;
     }
+  }
+}
+
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
 }

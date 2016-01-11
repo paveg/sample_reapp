@@ -52,7 +52,7 @@ describe "User pages" do
     let(:user) { FactoryGirl.create(:user) }
     let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
-    before { visit user_path(user) }
+    before { visit user_path(@user) }
 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
@@ -129,6 +129,17 @@ describe "User pages" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
+    end
+
+    describe "after submission" do
+      before { click_button submit }
+      it { should have_title('Sign up') }
+      it { should have_content('error') }
+      it { should have_content("Password can't be blank") }
+      it { should have_content("Password is too short (minimum is 6 characters) ") }
+      it { should have_content("Name can't be blank") }
+      it { should have_content("Email can't be blank") }
+      it { should have_content("Email is invalid") }
     end
 
     describe "with valid information" do
